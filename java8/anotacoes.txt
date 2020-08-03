@@ -1,0 +1,30 @@
+------------------Aula 01------------------------------------------
+javadoc
+	quando você passa o mouse por cima do metodo
+	ele mostra como usa-lo
+	
+java 8 deixa os metodos mais enxutos
+	o metodo sort tem no java 8 do List
+		java util
+
+Código fonte do List
+	default methods
+		um metodo dentro de uma interface
+		corpo
+			precisa ter um modificador default
+		estrategia de evolução de interfaces
+		
+List
+	foreach
+		precisa de um Consumer
+			recebe um consumidor de String
+
+iterable
+	A mãe de Collection
+	todas as collections são iterables
+	
+Uma interface não pode ter estado
+	somente metodos concretos
+	
+			
+		
