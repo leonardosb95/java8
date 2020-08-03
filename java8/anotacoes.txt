@@ -26,5 +26,19 @@ iterable
 Uma interface não pode ter estado
 	somente metodos concretos
 	
-			
+------------------Aula 02 Que venham os lambdas------------------------------------------			
+Lambda
+	Em vez de escrever a classe anônima
+	deixamos de escrever alguns itens que podem ser inferidos
+	
+	palavras.forEach((String s)->{
+			System.out.println(s);
+		});
 		
+	o que é método abstrato?
+	lambda se encaixa melhor 
+		quando a expressão dentro do método é curta	
+		deixa tudo mais legivel e simples	
+		
+	Object não é uma interface funcional
+		não da para utilizar o lambda nele

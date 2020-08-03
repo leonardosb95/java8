@@ -1,9 +1,7 @@
 package main;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.function.Consumer;
 
 public class OrdenaStrings {
 
@@ -14,47 +12,29 @@ public class OrdenaStrings {
 		palavras.add("editora casa do codigo");
 		palavras.add("caelum");
 
-		Comparator<String> comparador = new ComparadorPorTamanho();
-		// Collections.sort(palavras,comparador);
-		palavras.sort(comparador);
-		//System.out.println(palavras);
-		
+		palavras.sort((s1,s2)->{//Lambda
+			return Integer.compare(s1.length(),s2.length());
+		});
+	
+
 //		for(String p:palavras) {
 //			System.out.println(p);
 //		}
 //		
-		
-		Consumer<String> consumidor= new ImprimeNaLinha();
-		palavras.forEach(consumidor);//uma nova forma de interar numa lista, existe no java 8
+
+		// uma nova forma de interar numa lista, existe no java 8
+
+//		palavras.forEach(new Consumer<String>() {
+//			public void accept(String s) {
+//				System.out.println(s);
+//			}
+//			
+//		});
+
+		// Podemos remover as chaves porque só existe apenas uma unica instrução
+		palavras.forEach(s -> System.out.println(s));
 
 	}
 }
 
 
-class ImprimeNaLinha implements Consumer<String>{
-
-	@Override
-	public void accept(String s) {
-		System.out.println(s);
-		
-	}
-	
-	
-	
-}
-
-class ComparadorPorTamanho implements Comparator<String> {
-
-	@Override
-	public int compare(String s1, String s2) {
-
-		if (s1.length() < s2.length())
-			return -1;
-
-		if (s1.length() > s2.length())
-			return 1;
-
-		return 0;
-	}
-
-}
