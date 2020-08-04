@@ -42,3 +42,26 @@ Lambda
 		
 	Object não é uma interface funcional
 		não da para utilizar o lambda nele
+		
+		
+------------------Aula 03 Código mais sucinto com Method references------------------------------------------
+Comparator.comparing
+	factory de comparator
+	metodo estatico
+	É uma interface funcional
+	Interface Function
+		ajuda a passar um objeto para o Comparator.comparing
+		
+Method reference
+	Não há parenteses
+	Não há flechas
+	palavras.sort(Comparator.comparing(s -> s.length()));
+		para
+			palavras.sort(Comparator.comparing(String::length));// Isso é chamado de method reference
+
+		
+
+
+
+
+			
