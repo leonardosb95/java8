@@ -60,7 +60,25 @@ Method reference
 			palavras.sort(Comparator.comparing(String::length));// Isso é chamado de method reference
 
 		
-
+------------------Aula 04  Streams: trabalhando melhor com coleções------------------------------------------
+Streams: trabalhando com coleções no java 8
+Filter
+	Está dentro de uma interface Stream
+	recebe um predicado
+		verdadeiro ou falso
+		cursos.stream()
+			.filter(c->c.getAlunos()>100)
+			.forEach(c->System.out.println(c.getNome()));//Devolve uma lista de cursos que tenha o numero maior que 100
+	O lambda passado para o filter
+		Não pode ser referenciado pelo method reference
+		
+Streams primitivos		
+	Quando fazemos um stream map(Curso::getAlunos)
+		recebe de volta Stream<Integer>
+		utilizara mais recursos da JVM
+	Podemos invocar o mapToInt
+		Devolve um IntStream
+			possui outros metodos para se trabalhar
 
 
 
