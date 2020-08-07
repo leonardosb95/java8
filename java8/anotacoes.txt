@@ -1,18 +1,18 @@
 ------------------Aula 01------------------------------------------
 javadoc
-	quando vocÍ passa o mouse por cima do metodo
+	quando vocÔøΩ passa o mouse por cima do metodo
 	ele mostra como usa-lo
 	
 java 8 deixa os metodos mais enxutos
 	o metodo sort tem no java 8 do List
 		java util
 
-CÛdigo fonte do List
+CÔøΩdigo fonte do List
 	default methods
 		um metodo dentro de uma interface
 		corpo
 			precisa ter um modificador default
-		estrategia de evoluÁ„o de interfaces
+		estrategia de evoluÔøΩÔøΩo de interfaces
 		
 List
 	foreach
@@ -20,57 +20,57 @@ List
 			recebe um consumidor de String
 
 iterable
-	A m„e de Collection
-	todas as collections s„o iterables
+	A mÔøΩe de Collection
+	todas as collections sÔøΩo iterables
 	
-Uma interface n„o pode ter estado
+Uma interface nÔøΩo pode ter estado
 	somente metodos concretos
 	
 ------------------Aula 02 Que venham os lambdas------------------------------------------			
 Lambda
-	Em vez de escrever a classe anÙnima
+	Em vez de escrever a classe anÔøΩnima
 	deixamos de escrever alguns itens que podem ser inferidos
 	
 	palavras.forEach((String s)->{
 			System.out.println(s);
 		});
 		
-	o que È mÈtodo abstrato?
+	o que ÔøΩ mÔøΩtodo abstrato?
 	lambda se encaixa melhor 
-		quando a express„o dentro do mÈtodo È curta	
+		quando a expressÔøΩo dentro do mÔøΩtodo ÔøΩ curta	
 		deixa tudo mais legivel e simples	
 		
-	Object n„o È uma interface funcional
-		n„o da para utilizar o lambda nele
+	Object nÔøΩo ÔøΩ uma interface funcional
+		nÔøΩo da para utilizar o lambda nele
 		
 		
-------------------Aula 03 CÛdigo mais sucinto com Method references------------------------------------------
+------------------Aula 03 CÔøΩdigo mais sucinto com Method references------------------------------------------
 Comparator.comparing
 	factory de comparator
 	metodo estatico
-	… uma interface funcional
+	ÔøΩ uma interface funcional
 	Interface Function
 		ajuda a passar um objeto para o Comparator.comparing
 		
 Method reference
-	N„o h· parenteses
-	N„o h· flechas
+	NÔøΩo hÔøΩ parenteses
+	NÔøΩo hÔøΩ flechas
 	palavras.sort(Comparator.comparing(s -> s.length()));
 		para
-			palavras.sort(Comparator.comparing(String::length));// Isso È chamado de method reference
+			palavras.sort(Comparator.comparing(String::length));// Isso ÔøΩ chamado de method reference
 
 		
-------------------Aula 04  Streams: trabalhando melhor com coleÁıes------------------------------------------
-Streams: trabalhando com coleÁıes no java 8
+------------------Aula 04  Streams: trabalhando melhor com collections------------------------------------------
+Streams: trabalhando com coleÔøΩÔøΩes no java 8
 Filter
-	Est· dentro de uma interface Stream
+	EstÔøΩ dentro de uma interface Stream
 	recebe um predicado
 		verdadeiro ou falso
-		cursos.stream()
+		cursos.stream(),
 			.filter(c->c.getAlunos()>100)
 			.forEach(c->System.out.println(c.getNome()));//Devolve uma lista de cursos que tenha o numero maior que 100
 	O lambda passado para o filter
-		N„o pode ser referenciado pelo method reference
+		NÔøΩo pode ser referenciado pelo method reference
 		
 Streams primitivos		
 	Quando fazemos um stream map(Curso::getAlunos)
@@ -79,7 +79,33 @@ Streams primitivos
 	Podemos invocar o mapToInt
 		Devolve um IntStream
 			possui outros metodos para se trabalhar
-
-
-
 			
+			
+------------------Aula 05 Mais Streams, Collectors e APIs------------------------------------------
+
+findAny()
+    Devolve um Optional<Curso>
+Optional
+    forma organizada com valores null
+
+    orElse ()
+        devolve o curso que exista dentro do metodo optional
+        o curso encontrado ou null
+    average ()
+        √â do Streams
+        IntStream
+        se n√£o tiver nenhum elemento, divide a m√©dia por zero
+
+Gerando uma cole√ß√£o a partir de um Stream
+
+stream n√£o √© uma cole√ß√£o
+
+Map<String,Integer>
+    Collectors.toMap
+        recebe duas Functions
+            1-o que vai ser a chave
+            2-o valor da chave
+        ele mesmo vai decidir quantas threads usar e fazer todo o trabalho
+            utilizando APIS mais complicadas para ganhar perfomance
+
+

@@ -1,8 +1,7 @@
 package main;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ExercicioAula04 {
@@ -29,19 +28,62 @@ public class ExercicioAula04 {
 //			.filter(c->c.getAlunos()>100)
 //			.forEach(c->System.out.println(c.getNome()));
 		
-		cursos.stream()
-		.filter(c->c.getAlunos()>50)
-		.forEach(System.out::println);
-		
-		
-		int total=cursos.stream()
-		.filter(c->c.getAlunos()>100)
-		.mapToInt(Curso::getAlunos)
-		.sum();
-		
-		System.out.println("TOTAL :"+total);
-		
-		cursos.forEach(c->System.out.println(c.getAlunos()));
+//		cursos.stream()
+//		.filter(c->c.getAlunos()>50)
+//		.forEach(System.out::println);
+//
+//
+//		int total=cursos.stream()
+//		.filter(c->c.getAlunos()>100)
+//		.mapToInt(Curso::getAlunos)
+//		.sum();
+//
+//		System.out.println("TOTAL :"+total);
+//
+//		cursos.forEach(c->System.out.println(c.getAlunos()));
+
+
+//		Optional<Curso> optional= cursos.stream()
+//				.filter(c->c.getAlunos()>100)
+//				.findAny()
+//                .ifPresent(c-> System.out.println(c.getNome());
+
+
+       // Curso curso=optional.orElse(null);
+
+        //Curso curso=optional.get();
+
+                cursos=cursos.stream()
+                .filter(c->c.getAlunos()>100)
+                .collect(Collectors.toList());
+
+
+                Map mapa=cursos
+                        .stream()
+                        .filter(c->c.getAlunos()>100)
+                        .collect(Collectors.toMap(c -> c.getNome(), c -> c.getAlunos()));
+
+
+                cursos=cursos
+                        .stream()
+                        .filter(x->x.getAlunos()>45)
+                        .collect(Collectors.toList());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		
 	}
 	
