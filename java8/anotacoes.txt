@@ -108,4 +108,38 @@ Map<String,Integer>
         ele mesmo vai decidir quantas threads usar e fazer todo o trabalho
             utilizando APIS mais complicadas para ganhar perfomance
 
+------------------Aula 06 A nova API de datas------------------------------------------------------
+LocalDate
+    presente no pacote java.time
+Period
+    periodo entre duas datas
+        Period periodo=Period.between(hoje,olimpiadasRio);
+
+Incrementar ou decrementar datas
+    minus
+        decrementa
+            hoje.minusDays(1)//Para saber o dia de ontem
+    plus
+        incrementa
+            hoje.plusDays(1)//Para saber o dia de amanhã
+    É uma api imutavel, para alterar o valor tem que criar uma nova instancia
+
+Formatando suas datas
+    DateTimeFormatter
+        da para formatar datas ou horas
+
+Trabalhando com modelos mais especificos
+    YearMonth
+         YearMonth anoEMes=YearMonth.of(2015,Month.JANUARY);
+    Trabalhar apenas com tempo
+        LocalTime
+            LocalTime intervalo=LocalTime.of(12,30);
+
+
+
+
+
+
+
+
 
